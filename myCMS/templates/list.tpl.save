@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<title>My CMS</title>
+<link rel="stylesheet" type="text/css" href="style/basic.css" />
+<link rel="stylesheet" type="text/css" href="style/list.css" />
+</head>
+<body>
+
+{include file='header.tpl'}
+<div id='list'>
+ <h2>Current Position &gt; {$nav}</h2>
+ {if $AllListContent}
+ {foreach $AllListContent(key, value)}
+ <dl>
+  <dt><a href='details.php?id={@value->id}' target='_blank'><img src='{@value->thumbnail}' alt='{@value->title}' /></a></dt>
+  <dd>[<strong>{@value->nav_name}</strong>] <a href='details.php?id={@value->id}' target="_blank">{@value->title}</a></dd>
+  <dd>{@value->date} click:{@value->count} coin: {@value->gold}</dd>
+  <dd>Tip: {@value->info}</dd>
+ </dl>
+ {/foreach}
+ {else}
+  <p class='none'>no data</p>
+ {/if}
+ <div id='page'>{$page}</div>
+</div>
+<div id='sidebar'>
+ <div class='nav'>
+ <h2>Sub_Class List</h2>
+ {if $childnav}
+ {foreach $childnav(key, value)}
+ <strong><a href='list.php?id={@value->id}'>{@value->nav_name}</a></strong>
+ {/foreach}
+ {else}
+ <span>this category has no sub class</span>
+ {/if}
+ </div>
+ <div class='right'>
+  <h2>This MonthThis sub-class recommendation</h2>
+  <ul>
+   <li><em>06-20</em><a href='###'>news heading 1</a></li>
+   <li><em>06-20</em><a href='###'>news heading 2</a></li>
+   <li><em>06-20</em><a href='###'>news heading 3</a></li>
+   <li><em>06-20</em><a href='###'>news heading 4</a></li>
+   <li><em>06-20</em><a href='###'>news heading 5</a></li>
+   <li><em>06-20</em><a href='###'>news heading 6</a></li>
+   <li><em>06-20</em><a href='###'>news heading 7</a></li>
+  </ul>
+ </div>
+ <div class='right'>
+  <h2>This sub-class hot topics</h2>
+  <ul>
+   <li><em>06-20</em><a href='###'>news heading 1</a></li>
+   <li><em>06-20</em><a href='###'>news heading 2</a></li>
+   <li><em>06-20</em><a href='###'>news heading 3</a></li>
+   <li><em>06-20</em><a href='###'>news heading 4</a></li>
+   <li><em>06-20</em><a href='###'>news heading 5</a></li>
+   <li><em>06-20</em><a href='###'>news heading 6</a></li>
+   <li><em>06-20</em><a href='###'>news heading 7</a></li>
+  </ul>
+ </div>
+ <div class='right'>
+  <h2>This sub-class picture news</h2>
+  <ul>
+   <li><em>06-20</em><a href='###'>news heading 1</a></li>
+   <li><em>06-20</em><a href='###'>news heading 2</a></li>
+   <li><em>06-20</em><a href='###'>news heading 3</a></li>
+   <li><em>06-20</em><a href='###'>news heading 4</a></li>
+   <li><em>06-20</em><a href='###'>news heading 5</a></li>
+   <li><em>06-20</em><a href='###'>news heading 6</a></li>
+   <li><em>06-20</em><a href='###'>news heading 7</a></li>
+  </ul>
+ </div>
+</div>
+{include file='footer.tpl'}
+
+</body>
+</html>

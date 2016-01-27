@@ -1,0 +1,65 @@
+create table if not exists cms_manage (
+	id mediumint(8) unsigned primary key auto_increment,
+	admin_user varchar(20) not null,
+	admin_pass char(40) not null,
+	level tinyint(1) unsigned not null default 1,
+	login_count smallint(5) not null default 0,
+	last_ip varchar(20) not null default '000.000.000.000',
+	last_time datetime not null,
+	reg_time datetime not null
+);
+
+create table if not exists cms_level (
+	id mediumint(8) unsigned primary key auto_increment,
+	level tinyint(2) unsigned not null,
+	level_name varchar(20) not null,
+	level_info varchar(200) not null
+);
+
+create table if not exists cms_nav (
+	id mediumint(8) unsigned primary key auto_increment,
+	nav_name varchar(20) not null,
+	nav_info varchar(200) not null,
+	pid mediumint(8) unsigned default 0,
+	sort mediumint(8) not null
+);
+
+create table if not exists cms_content (
+	id mediumint(8) unsigned primary key auto_increment,
+	title varchar(50) not null,
+	nav mediumint(8) unsigned not null,
+	attr varchar(20) not null,
+	tag varchar(30) not null,
+	keyword varchar(30) not null,
+	thumbnail varchar(100) not null,
+	source varchar(20) not null,
+	author varchar(10) not null,
+	info varchar(200) not null,
+	content text not null,
+	commend tinyint(1) not null default 1,
+	count smallint(6) not null default 0,
+	gold smallint(6) not null default 0,
+	sort tinyint(1) not null default 0,
+	readlimit tinyint(1) not null default 0,
+	color varchar(10) not null,
+	date datetime not null
+);
+
+create table if not exists cms_user (
+	id mediumint(8) unsigned primary key auto_increment,
+	user varchar(20) not null,
+	pass char(40) not null,
+	email varchar(30) not null,
+	question varchar(20) not null,
+	answer varchar(20) not null,
+	state tinyint(1) not null default 1,
+	date datetime not null
+);
+
+create table if not exists cms_comment (
+	id mediumint(8) unsigned primary key auto_increment,
+	user varchar(20) not null,
+	content varchar(255) not null,
+	state tinyint(1) not null default 0,
+ 	date datetime not null
+);

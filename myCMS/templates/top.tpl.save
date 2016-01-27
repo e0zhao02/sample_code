@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../style/admin.css" />
+<script src="../js/admin_top_nav.js"></script>
+</head>
+<body id='top'>
+
+<h1>LOGO</h1>
+<ul>
+ <li><a href='../templates/sidebar.html' target="sidebar" id="nav1" class='selected' onclick="admin_top_nav(1)">Homepage</a></li>
+ <li><a href='../templates/sidebarn.html' target="sidebar" id="nav2" onclick="admin_top_nav(2)">Contents</a></li>
+ <li><a href='###' id="nav3" target="sidebar" onclick="admin_top_nav(3)">Membership</a></li>
+ <li><a href='###' id="nav4" target="sidebar" onclick="admin_top_nav(4)">System</a></li>
+</ul>
+
+<p>Hi, <strong>{$admin_user}</strong>[ {$level_name} ] [ <a href='../' target="_blank">Homepage</a> ] [ <a href='manage.php?action=logout' target='_parent'>Logout</a> ]
+</p>
+</body>
+</html>

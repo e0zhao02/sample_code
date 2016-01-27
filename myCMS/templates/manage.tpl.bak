@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href='../style/admin.css' />
+</head>
+<body id='main'>
+
+<div class="map">
+Manage Homepage &gt;&gt; For Administrator
+</div>
+
+<table cellspacing='0'>
+ <tr><th>No.</th><th>Username</th><th>Level</th><th>Login Counts</th><th>Last Login IP</th><th>Last Login Time</th><th>Options</th></tr>
+ {foreach $AllManage(key, value)}
+ <tr>
+  <td>{@value->id}</td>
+  <td>{@value->admin_user}</td>
+  <td>{@value->level_name}</td>
+  <td>{@value->login_count}</td>
+  <td>{@value->last_ip}</td>
+  <td>{@value->last_time}</td>
+  <td><a href='manage.php?action=update'>Edit</a> | <a href='manage.php?action=delete'>Delete</a></td>
+ </tr>
+ {/foreach}
+</table>
+<p class="center">[<a href="manage.php?action=add">Add New Manager</a>]</p>
+</body>
+</html>

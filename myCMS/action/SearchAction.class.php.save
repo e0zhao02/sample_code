@@ -1,0 +1,26 @@
+<?php
+	class SearchAction extends Action {
+		public function __construct(&$_tpl) {
+			parent::__construct($_tpl, new ContentModel());
+		}
+
+		public function _action() {
+			$this->searchTitle();
+			$this->searchKeyword();
+			$this->searchTag();
+		}
+
+		private function searchTitle() {
+			if($_GET['type']==1) {
+			}
+		}
+
+		private function searchKeyword() {
+			if($_GET['type']==2) {}
+		}
+
+		private function searchTag() {
+			if($_GET['type']==3) {}
+		}
+	}
+?>

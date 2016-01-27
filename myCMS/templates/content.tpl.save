@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='../style/admin.css' />
+<script src='../js/admin_content.js'></script>
+<script src='../ckeditor/ckeditor.js'></script>
+</head>
+<body id='main'>
+
+<div class="map">Content Management &gt;&gt; View Articles &gt;&gt; <strong id='title'>{$title}</strong></div>
+
+<ol>
+	<li><a href='content.php?action=show' class='selected'>Article List</a></li>
+	<li><a href='content.php?action=add'>Add New Article</a></li>
+
+	{if $update}
+		<li><a href='content.php?action=update&id={$id}'>Update Existing Article</a></li>
+	{/if}
+</ol>
+
+{if $add}
+ <form name='content' method='post' action='?action=add'>
+ <table cellspacing='0' class='content'>
+  <tr><td><strong>Publish a New Article</strong></td></tr>
+  <tr><td>Article Title: <input type='text' name='title' class='text' /></td></tr>
+  <tr><td>Channel: <select name='nav'><option style='padding:0;'>Please select a channel</option>{$nav}</select></td></tr>
+  <tr><td>Attributes:
+   <input type='checkbox' name='top' vavlue='attr' />Top
+   <input type='checkbox' name='rec' vavlue='attr' />Recommended
+   <input type='checkbox' name='bold' vavlue='attr' />Bold
+   <input type='checkbox' name='skip' vavlue='attr' />Skip
+  </td></tr>
+  <tr><td>TAG: <input type='text' name='tag' class='text' /></td></tr>
+  <tr><td>Keyword: <input type='text' name='keyword' class='text' /></td></tr>
+  <tr><td>Thumbnail: <input type='text' name='thumbnail' class='text' readonly='readonly' />
+		     <input type='button' value='Upload Thumbnail' onclick="centerWindow('../templates/upfile.html', 'upfile', '400', '100')" />
+		     <img name='pic' style='display:none' />
+  </td></tr>
+  <tr><td>Source: <input type='text' name='source' class='text' /></td></tr>
+  <tr><td>Author: <input type='text' name='author' class='text' /></td></tr>
+  <tr><td><span class='middle'>Abstract: </span><textarea name='info'></textarea></td></tr>
+  <tr class='ckeditor'><td><textarea id='TextArea1' name='content' class='ckeditor'></textarea></td></tr>
+  <tr><td>Comment Options: <input type='radio' name='commend' value='1' checked='checked' />Allow Comment<input type='radio' name='commend' value='0' />Forbid Comment
+          &nbsp;&nbsp;&nbsp;View Count: <input type='text' name='count' value='100' class='text small' />
+  </td></tr>
+  <tr><td>Article Order: <select name='sort'>
+				<option>Default</option>
+				<option>Top One Day</option>
+				<option>Top One Week</option>
+				<option>Top One Month</option>
+				<option>Top One Year</option>
+			  </select>
+          &nbsp;&nbsp;&nbsp;Coin: <input type='text' name='gold' value='0' class='text small' />
+  </td></tr>
+  <tr><td>Reading Privilege: <select name='limit'>
+				<option>Open to Public</option>
+				<option>Junior Member</option>
+				<option>Middle Member</option>
+				<option>Senior Member</option>
+				<option>VIP Member</option>
+			  </select>
+	  Title Color:	  <select name='color'>
+				<option>Default</option>
+				<option style='color:red'>Red</option>
+				<option style='color:blue'>Blue</option>
+				<option style='color:orange'>Orange</option>
+			  </select>
+  </td></tr>
+  <tr><td><input type='submit' name='send' value='publish' /><input type='reset' value='reset' /></td></tr>
+  <tr><td></td></tr>
+ </table>
+ </form>
+{/if}
+
+</body>
+</html>

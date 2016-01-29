@@ -1,0 +1,69 @@
+create table if not exists user (
+
+	id int unsigned not null auto_increment primary key,
+	username varchar(50) not null,
+	password varchar(50) not null,
+	regtime int not null,
+	admin tinyint not null
+);
+
+create table if not exists shopclass (
+
+	id int unsigned not null auto_increment primary key,
+	name varchar(50) not null
+);
+
+create table if not exists brand (
+
+	id int unsigned not null auto_increment primary key,
+	name varchar(50) not null,
+	shopclass_id int not null
+);
+
+create table if not exists shop(
+
+	id int unsigned not null auto_increment primary key,
+	name varchar(50) not null,
+	price float not null,
+	stock int not null,
+	shelf tinyint not null,
+	image varchar(100) not null,
+	brand_id int not null
+);
+
+create table if not exists orderstat (
+
+	id int unsigned not null auto_increment primary key,
+	name varchar(50) not null
+);
+
+create table if not exists contact (
+
+	id int unsigned not null auto_increment primary key,
+	realname varchar(50) not null,
+	address varchar(200) not null,
+	telephone varchar(20) not null,
+	email varchar(50) not null, 
+	user_id int not null
+);
+
+create table if not exists orders (
+
+	id int unsigned not null auto_increment primary key,
+	code varchar(50) not null,
+	user_id int not null,
+	shop_id int not null,
+	num int not null,
+	price float not null,
+	time int not null,
+	orderstat_id int not null,
+	contact_id int not null
+);
+
+create table if not exists comment (
+
+	id int unsigned not null auto_increment primary key,
+	content text,
+	user_id int not null,
+	shop_id int not null
+);

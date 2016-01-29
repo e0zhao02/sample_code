@@ -1,0 +1,5 @@
+function show_products() {
+	var oSpan=document.getElementsByClassName('products');
+
+		alert(oSpan[i].innerHTML);
+}

@@ -1,0 +1,117 @@
+body, form, ul, li {
+	padding:0;
+	margin:0;
+	font-family:"Times New Roman";
+	font-size:16px;
+}
+
+#login form {
+	width:350px;
+	margin:100px auto;
+	text:16px;
+}
+
+#login form fieldset {
+	font-family:"Times New Roman";
+	font-size:14px;
+	padding:20px 50px;
+}
+
+#login legend {
+	font-size:16px;
+	font-weight:bold;
+}
+
+#login label {
+	display:block;
+	margin:5px;
+}
+
+#login label input.text {
+	width:220px;
+	height:27px;
+	border:1px solid #666;
+	background:#eee;
+}
+
+#login label input.submit {
+	cursor:pointer;
+	margin:5px 0;
+}
+
+.top {	
+	margin:8px;
+	height:100px;
+	background:url(../images/footer.jpg);
+	position:relative;
+	overflow:hidden;
+}
+
+span.rolling {
+	position:absolute;
+	top:8px;
+	color:#006633;
+	font-weight:bold;
+	font-size:64px;
+}
+
+.left {
+	width:181px;
+	height:550px;
+	float:left;
+	margin-left:8px;
+	background-color:#f0f0f0;
+}
+
+.lefttop {
+	margin-bottom:30px;
+}
+
+.lefttop span {
+	font-family:"Times New Roman";
+	font-size:14px;
+}
+
+.right {
+	width:1065px;
+	height:550px;
+}
+
+.arrow {
+	float:left;
+	width:0;
+	height:0;
+	border-top:5px solid transparent;
+	border-left:10px solid blue;
+	border-bottom:5px solid transparent;
+	margin:4px 2px 2px 8px;
+}
+
+ul {
+	margin-top:20px;
+	margin-bottom:20px;
+	list-style:none;	
+	padding-left:15px;
+	font-family:"Times New Roman";
+}
+
+ul span {
+	font-size:16px;
+	font-weight:bold;
+	color:#3b6ea5;
+	margin-bottom:8px;
+}
+
+ul li a {
+	text-decoration:none;
+	font-size:14px;
+	color:#333;
+}
+
+ul li a:hover {
+	text-decoration:underline;
+}
+
+#user table tbody tr:hover {
+	background-color:#ffffcc;
+}

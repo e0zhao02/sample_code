@@ -1,0 +1,8 @@
+<?php
+	session_start();
+
+	if($_SESSION['login'] && $_SESSION['admin']
+		//echo "<script>location='/myShop/admin/index.php'</script>";
+	else echo "22";
+		//echo "<script>location='/myShop/admin/login/index.php'</script>";
+?>
